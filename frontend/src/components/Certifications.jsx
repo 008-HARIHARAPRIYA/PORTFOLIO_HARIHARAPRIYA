@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/Certifications.css';
 import { useEditMode } from './EditModeContext';
+import { API_BASE_URL } from '../config';
 
 const Certifications = () => {
   const [certs, setCerts] = useState([]);
@@ -20,7 +21,7 @@ const Certifications = () => {
   }, []);
 
   const fetchCertifications = () => {
-    axios.get('http://localhost:5000/api/certifications')
+    axios.get(`${API_BASE_URL}/api/certifications`)
       .then(res => setCerts(res.data))
       .catch(err => console.error(err));
   };
@@ -32,14 +33,14 @@ const Certifications = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (editId) {
-      axios.put(`http://localhost:5000/api/certifications/${editId}`, formData)
+      axios.put(`${API_BASE_URL}/api/certifications/${editId}`, formData)
         .then(() => {
           fetchCertifications();
           setEditId(null);
           setFormData({ type: '', provider: '', description: '', issuedDate: '', proof: '' });
         });
     } else {
-      axios.post('http://localhost:5000/api/certifications/add', formData)
+      axios.post(`${API_BASE_URL}/api/certifications/add`, formData)
         .then(() => {
           fetchCertifications();
           setFormData({ type: '', provider: '', description: '', issuedDate: '', proof: '' });
@@ -48,7 +49,7 @@ const Certifications = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/certifications/${id}`)
+    axios.delete(`${API_BASE_URL}/api/certifications/${id}`)
       .then(() => fetchCertifications());
   };
 

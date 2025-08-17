@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { useEditMode } from './EditModeContext';
+import { API_BASE_URL } from '../config';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -24,7 +25,7 @@ const Projects = () => {
   }, []);
 
   const fetchProjects = () => {
-    axios.get('http://localhost:5000/api/projects')
+    axios.get(`${API_BASE_URL}/api/projects`)
       .then((response) => setProjects(response.data))
       .catch((error) => console.error("Error fetching projects:", error));
   };
@@ -41,14 +42,14 @@ const Projects = () => {
     };
 
     if (editingId) {
-      axios.put(`http://localhost:5000/api/projects/${editingId}`, payload)
+      axios.put(`${API_BASE_URL}/api/projects/${editingId}`, payload)
         .then(() => {
           fetchProjects();
           setEditingId(null);
           setFormData({ title: '', description: '', images: '', video: '', githubLink: '', deployLink: '' });
         });
     } else {
-      axios.post('http://localhost:5000/api/projects', payload)
+      axios.post(`${API_BASE_URL}/api/projects`, payload)
         .then(() => {
           fetchProjects();
           setFormData({ title: '', description: '', images: '', video: '', githubLink: '', deployLink: '' });
@@ -70,7 +71,7 @@ const Projects = () => {
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this project?")) {
-      axios.delete(`http://localhost:5000/api/projects/${id}`)
+      axios.delete(`${API_BASE_URL}/api/projects/${id}`)
         .then(() => fetchProjects());
     }
   };
@@ -151,7 +152,7 @@ const Projects = () => {
             )}
           </div>
         ))
-      )}
+      }
     </div>
   );
 };

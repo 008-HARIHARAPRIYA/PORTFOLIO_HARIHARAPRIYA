@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/CodingStatus.css';
 import { useEditMode } from './EditModeContext';
+import { API_BASE_URL } from '../config';
 
 const CodingStatus = () => {
   const [statusList, setStatusList] = useState([]);
@@ -21,7 +22,7 @@ const CodingStatus = () => {
   }, []);
 
   const fetchStatus = () => {
-    axios.get('http://localhost:5000/api/coding-stats')
+    axios.get(`${API_BASE_URL}/api/coding-stats`)
       .then(res => setStatusList(res.data))
       .catch(err => console.error("Error fetching coding status", err));
   };
@@ -32,14 +33,14 @@ const CodingStatus = () => {
 
   const handleAddOrUpdate = () => {
     if (editingId) {
-      axios.put(`http://localhost:5000/api/coding-stats/${editingId}`, newEntry)
+      axios.put(`${API_BASE_URL}/api/coding-stats/${editingId}`, newEntry)
         .then(() => {
           setEditingId(null);
           setNewEntry({ platform: '', username: '', profileLink: '', problemSolved: '', rank: '', stars: '' });
           fetchStatus();
         });
     } else {
-      axios.post('http://localhost:5000/api/coding-stats/add', newEntry)
+      axios.post(`${API_BASE_URL}/api/coding-stats/add`, newEntry)
         .then(() => {
           setNewEntry({ platform: '', username: '', profileLink: '', problemSolved: '', rank: '', stars: '' });
           fetchStatus();
@@ -61,7 +62,7 @@ const CodingStatus = () => {
 
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this entry?')) {
-      axios.delete(`http://localhost:5000/api/coding-stats/${id}`)
+      axios.delete(`${API_BASE_URL}/api/coding-stats/${id}`)
         .then(() => fetchStatus());
     }
   };
