@@ -1,0 +1,143 @@
+/* Container */
+.projects-container {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #f8f9fb, #e0e0e0);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Project Card */
+.project-card {
+  background-color: #fff;
+  border-left: 6px solid #007bff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin: 30px 0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  animation: slideInRight 0.6s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.project-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2e44;
+  margin-bottom: 12px;
+}
+
+/* Description */
+.project-description {
+  font-size: 16px;
+  color: #4f4f4f;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Image */
+.project-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.03);
+}
+
+/* Video */
+.project-video {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Links Section */
+.project-links {
+  margin-top: 20px;
+}
+
+.project-links a {
+  display: inline-block;
+  margin: 10px 12px 0 0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 4px 14px rgba(0, 123, 255, 0.3);
+}
+
+.project-links a:hover {
+  background: linear-gradient(135deg, #0056b3, #00aaff);
+  transform: translateY(-2px);
+}
+
+/* Form Styling */
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.project-form button {
+  padding: 10px 22px;
+  background-color: #3366ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.project-form button:hover {
+  background-color: #254eda;
+}
+
+/* Action Buttons (Edit/Delete) */
+.project-actions button {
+  margin-right: 10px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.project-actions button:hover {
+  background-color: #e65c00;
+}
+
+/* Animation */
+@keyframes slideInRight {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

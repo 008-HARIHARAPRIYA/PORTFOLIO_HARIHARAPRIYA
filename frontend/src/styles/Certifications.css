@@ -1,0 +1,89 @@
+.certifications-page {
+  padding: 2rem;
+  background: #f7f9fc;
+  font-family: Arial, sans-serif;
+}
+
+.cert-page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.cert-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  gap: 10px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cert-form input, .cert-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.cert-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cert-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cert-card {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.cert-left {
+  flex: 1;
+}
+
+.cert-right {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.cert-img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+}
+
+.cert-actions {
+  margin-top: 1rem;
+}
+
+.cert-actions button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cert-actions button:last-child {
+  background-color: #dc3545;
+}

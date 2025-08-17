@@ -1,0 +1,135 @@
+.coding-status-section {
+  padding: 40px;
+  background: linear-gradient(to right, #e0f7fa, #f9fbe7);
+  text-align: center;
+  min-height: 100vh;
+}
+
+.coding-status-section h2 {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.coding-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.coding-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coding-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-left {
+  text-align: left;
+  color: #2c3e50;
+  width: 75%;
+}
+
+.card-left h3 {
+  margin-bottom: 10px;
+  color: #00796b;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.card-left p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.profile-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #0077cc;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+  background-color: #005fa3;
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+}
+
+.platform-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.form-container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.form-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 180px;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #218838;
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
